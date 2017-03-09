@@ -1,0 +1,9 @@
+{
+  "customSize": "960px",
+  "customStyles": {
+    "color": "black",
+    "backgroundColor": "white"
+  },
+  "customViewport": "(max-width: 30em)",
+  "customSelector": ":hover, :focus"
+}

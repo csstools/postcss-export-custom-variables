@@ -1,0 +1,11 @@
+:root {
+	--custom-size: 960px;
+	--custom-styles: {
+		color: black;
+		background-color: white;
+	}
+}
+
+@custom-media --custom-viewport (max-width: 30em);
+
+@custom-selector :--custom-selector :hover, :focus;

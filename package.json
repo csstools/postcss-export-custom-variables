@@ -1,0 +1,57 @@
+{
+  "name": "postcss-export-custom-variables",
+  "version": "1.0.0",
+  "description": "Export custom media queries, custom properties, custom property sets, and custom selectors from CSS as JavaScript variables",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jonathantneal/postcss-export-custom-variables",
+  "homepage": "https://github.com/jonathantneal/postcss-export-custom-variables#readme",
+  "bugs": "https://github.com/jonathantneal/postcss-export-custom-variables/issues",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "clean": "git clean -X -d -f",
+    "prepublish": "npm test && npm run test:pre",
+    "postpublish": "npm run test:post",
+    "test": "echo 'Running tests...'; npm run test:js && npm run test:pre && npm run test:tape && npm run test:post",
+    "test:pre": "babel index.js --presets=env --out-file index.js --source-maps inline",
+    "test:pre-commit": "echo 'Running tests...'; npm run test:js && npm run test:tape",
+    "test:post": "git checkout index.js",
+    "test:js": "eslint *.js --cache --ignore-pattern .gitignore",
+    "test:tape": "postcss-tape"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "postcss": "^6.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-dev": "2.0.0",
+    "postcss-tape": "2.0.1",
+    "pre-commit": "^1.2.2"
+  },
+  "eslintConfig": {
+    "extends": "dev"
+  },
+  "pre-commit": [
+    "test:pre-commit"
+  ],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "export",
+    "custom",
+    "custom variables",
+    "vars",
+    "variables",
+    "media",
+    "properties"
+  ]
+}
